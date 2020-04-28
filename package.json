@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/nearley": "^2.11.1",
-    "@types/node": "^13.13.2"
+    "@types/node": "^13.13.2",
+    "parcel": "^1.12.4"
   }
 }
