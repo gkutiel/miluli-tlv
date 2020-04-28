@@ -796,28 +796,24 @@ function girl(name) {
     gender: 'girl',
     title: title('girl')
   };
-} // const kids = shuffle([
-// boy('חבובו')
-// , boy('יותם')
-// , boy('אורי')
-// , boy('יובל')
-// , boy('אלעד')
-// , boy('רוני')
-// , boy('גיא')
-// , girl('חבובה')
-// , girl('נועה')
-// , girl('דיאנה')
-// , girl('שחר')
-// , girl('שקד')
-// , girl('נוגה בלי ו')
-// , girl('מעיין')
-// , girl('לוטם')
-// , girl('עדי')
-// , girl('דניאלה')
+}
+
+var kids = shuffle_array_1.default([boy('חבובו'), boy('יותם'), boy('אורי'), boy('יובל'), boy('אלעד'), boy('רוני'), boy('גיא'), girl('חבובה'), girl('נועה'), girl('דיאנה'), girl('שחר'), girl('שקד'), girl('נוגה בלי ו'), girl('מעיין'), girl('לוטם'), girl('עדי'), girl('דניאלה')]); // const kids = shuffle([
+//     boy('יפתח')
+//     , boy('יותם')
+//     , boy('יואב')
+//     , boy('אופיר')
+//     , boy('גלעד')
+//     , boy('שי')
+//     , boy('אלי')
+//     , girl('יעל')
+//     , girl('עינב')
+//     , girl('מעיין')
+//     , girl('ענת')
+//     , girl('טליה')
+//     , girl('איילת')
+//     , girl('פסיה')
 // ])
-
-
-var kids = shuffle_array_1.default([boy('יפתח'), boy('יותם'), boy('יואב'), boy('אופיר'), boy('גלעד'), boy('שי'), boy('אלי'), girl('יעל'), girl('עינב'), girl('מעיין'), girl('ענת'), girl('טליה'), girl('איילת'), girl('פסיה')]);
 
 function kid() {
   var kid = kids.shift();
@@ -1185,7 +1181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54817" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59257" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
