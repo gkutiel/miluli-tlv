@@ -1,0 +1,30 @@
+{
+  "name": "math2text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/moo": "^0.5.3",
+    "@types/parsimmon": "^1.10.1",
+    "@types/random": "^2.1.1",
+    "@types/random-item": "^2.0.0",
+    "@types/shuffle-array": "0.0.28",
+    "moo": "^0.5.1",
+    "nearley": "^2.19.2",
+    "nearly": "^1.8.1",
+    "parsimmon": "^1.13.0",
+    "random": "^2.2.0",
+    "random-item": "^3.0.0",
+    "shuffle-array": "^1.0.1",
+    "utils.random": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/nearley": "^2.11.1",
+    "@types/node": "^13.13.2"
+  }
+}
