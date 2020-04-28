@@ -87,7 +87,6 @@ function girl(name: string) {
     return { name, gender: 'girl', title: title('girl') }
 }
 
-
 const kids = shuffle([
     boy('חֲבוּבוֹ')
     , boy('יוֹתָם')
@@ -108,6 +107,27 @@ const kids = shuffle([
     , girl('עֲדִי')
     , girl('דָּנִיאֵלָה')
 ])
+
+// const kids = shuffle([
+//     boy('חֲבוּבוֹ')
+//     , boy('יוֹתָם')
+//     , boy('אוּרִי')
+//     , boy('יוּבָל')
+//     , boy('אֶלְעָד')
+//     , boy('רֹנִּי')
+//     , boy('גַּיְא')
+
+//     , girl('חֲבוּבָה')
+//     , girl('נֹעָה')
+//     , girl('דִּיאַנֶּה')
+//     , girl('שַׁחַר')
+//     , girl('שָׁקֵד')
+//     , girl('נֹגַהּ בְּלִי ו')
+//     , girl('מַעְיָן')
+//     , girl('לֹטֶם')
+//     , girl('עֲדִי')
+//     , girl('דָּנִיאֵלָה')
+// ])
 
 // const kids = shuffle([
 //     boy('יִפְתַּח')
@@ -174,7 +194,7 @@ export class NodeMinusNode implements Node {
 
     strs(animal: Animal): string[] {
         return this.l.strs(animal).concat(this.r.strs(animal.eatBy())).concat([
-            `כָּל אֶחָד מֵהַ${animal.eatBy().names} שֶׁל ${this.r.kid.name} אכל ${animal.name} אֶחָד שֶׁל ${this.l.kid.name}.`,
+            `כָּל אֶחָד מֵהַ${animal.eatBy().names} שֶׁל ${this.r.kid.name} אָכַל ${animal.name} אֶחָד שֶׁל ${this.l.kid.name}.`,
             `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַ${animal.names} הַנּוֹתָרִים שֶׁל ${this.l.kid.name}.`
         ])
     }
