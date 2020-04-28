@@ -94,6 +94,27 @@ function girl(name: string) {
 }
 
 
+// const kids = shuffle([
+// boy('חבובו')
+// , boy('יותם')
+// , boy('אורי')
+// , boy('יובל')
+// , boy('אלעד')
+// , boy('רוני')
+// , boy('גיא')
+// , girl('חבובה')
+// , girl('נועה')
+// , girl('דיאנה')
+
+// , girl('שחר')
+// , girl('שקד')
+// , girl('נוגה בלי ו')
+// , girl('מעיין')
+// , girl('לוטם')
+// , girl('עדי')
+// , girl('דניאלה')
+// ])
+
 const kids = shuffle([
     boy('יפתח')
     , boy('יותם')
