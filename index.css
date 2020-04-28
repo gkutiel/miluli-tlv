@@ -44,3 +44,9 @@ body {
 input:focus::placeholder {
     color: transparent;
 }
+
+@media print {
+    .dontprint {
+        display: none;
+    }
+}
