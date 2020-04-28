@@ -131,19 +131,14 @@ function girl(name: string) {
 
 const kids = shuffle([
     boy('יִפְתַּח')
-    , boy('יוֹתָם')
-    , boy('יוֹאָב')
-    , boy('אוֹפִיר')
+    , boy('נִסִּים')
+    , boy('רַן')
+    , boy('אָסָף')
     , boy('גִּלְעָד')
-    , boy('שַׁי')
-    , boy('אֵלִי')
-    , girl('יָעֵל')
-    , girl('עֵנָב')
-    , girl('מַעְיָן')
-    , girl('עֲנָת')
-    , girl('טַלְיָה')
-    , girl('אַיֶּלֶת')
-    , girl('פֶּסְיָה')
+    , boy('יְהוּדָה')
+    , girl('מָרִינָה')
+    , girl('אָנָה')
+    , girl('שָׁרוֹן')
 ])
 
 function kid(): kid {
