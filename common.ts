@@ -1,20 +1,55 @@
 import shuffle from 'shuffle-array'
 import randomItem from 'random-item'
 
-const vocab: { [key: string]: [string, string] } = {
-    put: ['שָׂם', 'שמֵהַ']
-    , buy: ['קָנָה', 'קָנְתָה']
-    , own: ['שֶׁבִּרְשׁוּתוֹ', 'שֶׁבִּרְשׁוּתָהּ']
+interface vocab {
+    et: string
+    of: string
+    the: string
+    all: string
+
+    put: string
+    buy: string
+    own: string
+    his: string
+    and: string
+    them: string
+    number: string
 }
 
-function word(word: [string, string], gender: gender) {
-    const i = gender == 'boy' ? 0 : 1
-    return word[i]
+const common_vocab = {
+    et: 'אֶת'
+    , of: 'שֶׁל'
+    , the: 'הַ'
+    , all: 'כָּל'
+    , and: 'וְ'
+    , them: 'אוֹתָם'
+    , number: 'מִסְפָּר'
 }
+
+const vocab_boy: { [key in keyof vocab]: string } = {
+    ...common_vocab, ...{
+        put: 'שָׁם'
+        , buy: 'קָנָה'
+        , own: 'שֶׁבִּרְשׁוּתוֹ'
+        , his: 'שֶׁלּוֹ'
+    }
+}
+
+const vocab_girl: { [key in keyof vocab]: string } = {
+    ...common_vocab, ...{
+        put: 'שְׁמָהּ'
+        , buy: 'קָנְתָה'
+        , own: 'שֶׁבִּרְשׁוּתָהּ'
+        , his: 'שֶׁלּוֹ'
+    }
+}
+
+function vocab(gender: gender) {
+    return gender === 'boy' ? vocab_boy : vocab_girl
+}
+
 
 type gender = 'boy' | 'girl'
-
-
 
 function title(gender: gender) {
     const title_first = [
@@ -24,6 +59,8 @@ function title(gender: gender) {
         , ['גַּמָּד', 'פִּיַּת']
         , ['שׁוֹדֵד', 'שׁוֹדֶדֶת']
         , ['קוֹסֵם', 'מְכַשֶּׁפֶת']
+        , ['מְכַסֵּחַ', 'מְכַסַּחַת']
+        , ['שׁוֹמֵר', 'שׁוֹמֶרֶת']
     ]
     const title_second = [
         'הַשּׁוֹקוֹלָד'
@@ -220,9 +257,11 @@ export class NodeDivNode implements Node {
     }
 
     strs(animal: Animal): string[] {
+        const l = vocab(this.l.kid.gender)
+        const r = vocab(this.r.kid.gender)
         return this.l.strs(animal).concat(this.r.strs(animal)).concat([
-            `${this.r.kid.name} ${word(vocab.buy, this.r.kid.gender)} כְּלוּב אֶחָד לְכֹל אֶחָד מֵהַ${animal.names} ${word(vocab.own, this.r.kid.gender)}.`,
-            `${this.l.kid.name} ${word(vocab.put, this.l.kid.gender)} אֶת הַ${animal.names} ${word(vocab.own, this.l.kid.gender)} בַּכְּלוּבִים שֶׁל ${this.r.kid.name}, מִסְפָּר זֵהֶה שֶׁל ${animal.names} בְּכָל כְּלוּב.`,
+            `${this.r.kid.name} ${r.buy} כְּלוּב אֶחָד לְכֹל אֶחָד מֵהַ${animal.names} ${r.own}.`,
+            `${this.l.kid.name} ${l.put} אֶת הַ${animal.names} ${l.own} בַּכְּלוּבִים שֶׁל ${this.r.kid.name}, מִסְפָּר זֵהֶה שֶׁל ${animal.names} בְּכָל כְּלוּב.`,
             `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַ${animal.names} מֵאֶחָד הַכְּלוּבִים.`
         ])
     }
@@ -245,5 +284,24 @@ export class NodeNumber implements Node {
     strs(animal: Animal): string[] {
         return [
             `לְ${this.kid.name}, ${this.kid.title}, יֵשׁ ${count(this.n, animal)}.`]
+    }
+}
+
+export class NodeSqrt implements Node {
+    kid = kid()
+    n: Node
+
+    constructor(n: Node) {
+        this.n = n
+    }
+
+    strs(animal: Animal): string[] {
+        const _ = vocab(this.kid.gender)
+        const n = vocab(this.n.kid.gender)
+        return this.n.strs(animal).concat([
+            `${this.n.kid.name} ${n.put} ${n.them} בַּכְּלוּבִים.`
+            , `מִסְפַּר הַכְּלוּבִים זֵהֶה לְמִסְפַּר הַ${animal.names} בְּכָל כְּלוּב.`
+            , `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַ${animal.names} מִכְּלוּב אֶחָד.`,
+        ])
     }
 }

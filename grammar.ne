@@ -14,6 +14,7 @@ term ->
 
 factor ->
     "(" _ exp _ ")" {% ([lp, $2, exp, $4, rp]) => exp %}
+    | "sqrt(" _ exp _ ")" {% ([sqrt, $2, exp, $4, rp]) => new common.NodeSqrt(exp) %}
     | number {% ([n]) => new common.NodeNumber(parseInt(n.join(''))) %}
 
 number -> [0-9]:+ {% id %}
