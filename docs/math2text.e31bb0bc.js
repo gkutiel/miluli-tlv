@@ -796,24 +796,28 @@ function girl(name) {
     gender: 'girl',
     title: title('girl')
   };
-}
-
-var kids = shuffle_array_1.default([boy('חבובו'), boy('יותם'), boy('אורי'), boy('יובל'), boy('אלעד'), boy('רוני'), boy('גיא'), girl('חבובה'), girl('נועה'), girl('דיאנה'), girl('שחר'), girl('שקד'), girl('נוגה בלי ו'), girl('מעיין'), girl('לוטם'), girl('עדי'), girl('דניאלה')]); // const kids = shuffle([
-//     boy('יפתח')
+} // const kids = shuffle([
+//     boy('חבובו')
 //     , boy('יותם')
-//     , boy('יואב')
-//     , boy('אופיר')
-//     , boy('גלעד')
-//     , boy('שי')
-//     , boy('אלי')
-//     , girl('יעל')
-//     , girl('עינב')
+//     , boy('אורי')
+//     , boy('יובל')
+//     , boy('אלעד')
+//     , boy('רוני')
+//     , boy('גיא')
+//     , girl('חבובה')
+//     , girl('נועה')
+//     , girl('דיאנה')
+//     , girl('שחר')
+//     , girl('שקד')
+//     , girl('נוגה בלי ו')
 //     , girl('מעיין')
-//     , girl('ענת')
-//     , girl('טליה')
-//     , girl('איילת')
-//     , girl('פסיה')
+//     , girl('לוטם')
+//     , girl('עדי')
+//     , girl('דניאלה')
 // ])
+
+
+var kids = shuffle_array_1.default([boy('יפתח'), boy('יותם'), boy('יואב'), boy('אופיר'), boy('גלעד'), boy('שי'), boy('אלי'), girl('יעל'), girl('עינב'), girl('מעיין'), girl('ענת'), girl('טליה'), girl('איילת'), girl('פסיה')]);
 
 function kid() {
   var kid = kids.shift();
@@ -1050,7 +1054,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         var _ref12 = _slicedToArray(_ref11, 1),
             n = _ref12[0];
 
-        return new common.NodeNumber(n);
+        return new common.NodeNumber(parseInt(n.join('')));
       }
     }, {
       "name": "number$ebnf$1",
@@ -1064,12 +1068,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     }, {
       "name": "number",
       "symbols": ["number$ebnf$1"],
-      "postprocess": function postprocess(_ref13) {
-        var _ref14 = _slicedToArray(_ref13, 1),
-            n = _ref14[0];
-
-        return parseInt(n);
-      }
+      "postprocess": id
     }, {
       "name": "_$ebnf$1",
       "symbols": []
@@ -1181,7 +1180,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59257" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59101" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

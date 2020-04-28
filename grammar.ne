@@ -14,7 +14,7 @@ term ->
 
 factor ->
     "(" _ exp _ ")" {% ([lp, $2, exp, $4, rp]) => exp %}
-    | number {% ([n]) => new common.NodeNumber(n) %}
+    | number {% ([n]) => new common.NodeNumber(parseInt(n.join(''))) %}
 
-number -> [0-9]:+ {% ([n]) => parseInt(n) %}
+number -> [0-9]:+ {% id %}
 _ -> [ \t]:* 
