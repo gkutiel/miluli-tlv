@@ -2,9 +2,9 @@ import shuffle from 'shuffle-array'
 import randomItem from 'random-item'
 
 const vocab: { [key: string]: [string, string] } = {
-    put: ['שם', 'שמֵהַ']
-    , buy: ['קנה', 'קנתה']
-    , own: ['שברשותו', 'שברשותה']
+    put: ['שָׂם', 'שמֵהַ']
+    , buy: ['קָנָה', 'קָנְתָה']
+    , own: ['שֶׁבִּרְשׁוּתוֹ', 'שֶׁבִּרְשׁוּתָהּ']
 }
 
 function word(word: [string, string], gender: gender) {
@@ -109,36 +109,32 @@ function girl(name: string) {
 // ])
 
 // const kids = shuffle([
-//     boy('חֲבוּבוֹ')
-//     , boy('יוֹתָם')
-//     , boy('אוּרִי')
-//     , boy('יוּבָל')
-//     , boy('אֶלְעָד')
-//     , boy('רֹנִּי')
-//     , boy('גַּיְא')
-
-//     , girl('חֲבוּבָה')
-//     , girl('נֹעָה')
-//     , girl('דִּיאַנֶּה')
-//     , girl('שַׁחַר')
-//     , girl('שָׁקֵד')
-//     , girl('נֹגַהּ בְּלִי ו')
-//     , girl('מַעְיָן')
-//     , girl('לֹטֶם')
-//     , girl('עֲדִי')
-//     , girl('דָּנִיאֵלָה')
+//     boy('יִפְתַּח')
+//     , boy('נִסִּים')
+//     , boy('רַן')
+//     , boy('אָסָף')
+//     , boy('גִּלְעָד')
+//     , boy('יְהוּדָה')
+//     , girl('מָרִינָה')
+//     , girl('אָנָה')
+//     , girl('שָׁרוֹן')
 // ])
 
 const kids = shuffle([
     boy('יִפְתַּח')
-    , boy('נִסִּים')
-    , boy('רַן')
-    , boy('אָסָף')
+    , boy('יוֹתָם')
+    , boy('יוֹאָב')
+    , boy('אוֹפִיר')
     , boy('גִּלְעָד')
-    , boy('יְהוּדָה')
-    , girl('מָרִינָה')
-    , girl('אָנָה')
-    , girl('שָׁרוֹן')
+    , boy('שַׁי')
+    , boy('אֵלִי')
+    , girl('יָעֵל')
+    , girl('עֵנָב')
+    , girl('מַעְיָן')
+    , girl('עֲנָת')
+    , girl('טַלְיָה')
+    , girl('אַיֶּלֶת')
+    , girl('פֶּסְיָה')
 ])
 
 function kid(): kid {
