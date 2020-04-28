@@ -24,9 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const story = document.getElementById('story') as HTMLDivElement
     const q = document.getElementById('question') as HTMLDivElement
 
-    input.addEventListener('input', () => {
+    function onInput() {
         try {
-
             const p = parse(input.value.trim())
             story.innerHTML = p.story.join(' ')
             q.innerText = p.question
@@ -36,7 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
             story.innerText = `Can't understand ${input.value}`
             q.innerText = '¯\_(ツ)_/¯'
         }
-    })
+    }
+
+    input.addEventListener('input', onInput)
 
     input.focus()
+    input.value = '1 + 2'
+    onInput()
 })
