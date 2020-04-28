@@ -2,7 +2,7 @@ import shuffle from 'shuffle-array'
 import randomItem from 'random-item'
 
 const vocab: { [key: string]: [string, string] } = {
-    put: ['שם', 'שמה']
+    put: ['שם', 'שמֵהַ']
     , buy: ['קנה', 'קנתה']
     , own: ['שברשותו', 'שברשותה']
 }
@@ -18,31 +18,25 @@ type gender = 'boy' | 'girl'
 
 function title(gender: gender) {
     const title_first = [
-        ['לוחם', 'לוחמת']
-        , ['נסיך', 'נסיכת']
-        , ['מלך', 'מלכת']
-        , ['גמד', 'פיית']
-        , ['שודד', 'שודדת']
-        , ['קוסם', 'מכשפת']
+        ['לוֹחֵם', 'לוֹחֶמֶת']
+        , ['נָסִיךְ', 'נְסִיכַת']
+        , ['מֶלֶךְ', 'מַלְכַּת']
+        , ['גַּמָּד', 'פִּיַּת']
+        , ['שׁוֹדֵד', 'שׁוֹדֶדֶת']
+        , ['קוֹסֵם', 'מְכַשֶּׁפֶת']
     ]
     const title_second = [
-        'השוקולד'
-        , 'החלומות'
-        , 'האור'
-        , 'החושך'
-        , 'הממתקים'
-        , 'היערות'
-        , 'הביצות'
-        , 'הגבעות'
+        'הַשּׁוֹקוֹלָד'
+        , 'הַחֲלוֹמוֹת'
+        , 'הָאוֹר'
+        , 'הַחֹשֶׁךְ'
+        , 'הַמַּמְתַּקִּים'
+        , 'הַיְּעָרוֹת'
+        , 'הַבִּצּוֹת'
+        , 'הַגְּבָעוֹת'
     ]
     const i = gender === 'boy' ? 0 : 1
     return `${randomItem(title_first)[i]} ${randomItem(title_second)}`
-}
-
-function his(gender: gender) {
-    return gender == 'boy'
-        ? 'his'
-        : 'her'
 }
 
 type kid = {
@@ -60,29 +54,29 @@ interface Animal {
 
 
 export const cat: Animal = {
-    name: 'חתול'
-    , names: 'חתולים'
+    name: 'חָתוּל'
+    , names: 'חֲתוּלִים'
     , eat: () => { return snake }
     , eatBy: () => { return dog }
 }
 
 export const dog: Animal = {
-    name: 'כלב'
-    , names: 'כלבים'
+    name: 'כֶּלֶב'
+    , names: 'כְּלָבִים'
     , eat: () => { return cat }
     , eatBy: () => { return snake }
 }
 
 export const snake: Animal = {
-    name: 'נחש'
-    , names: 'נחשים'
+    name: 'נָחָשׁ'
+    , names: 'נְחָשִׁים'
     , eat: () => { return dog }
     , eatBy: () => { return cat }
 }
 
 
 export function question(animal: Animal, kid: kid) {
-    return `כמה ${animal.names} יש ל${kid.name}?`
+    return `כַּמָּה ${animal.names} יֵשׁ לְ${kid.name}?`
 }
 
 function boy(name: string) {
@@ -94,43 +88,43 @@ function girl(name: string) {
 }
 
 
-const kids = shuffle([
-    boy('חבובו')
-    , boy('יותם')
-    , boy('אורי')
-    , boy('יובל')
-    , boy('אלעד')
-    , boy('רוני')
-    , boy('גיא')
-    , girl('חבובה')
-    , girl('נועה')
-    , girl('דיאנה')
-
-    , girl('שחר')
-    , girl('שקד')
-    , girl('נוגה בלי ו')
-    , girl('מעיין')
-    , girl('לוטם')
-    , girl('עדי')
-    , girl('דניאלה')
-])
-
 // const kids = shuffle([
-//     boy('יפתח')
+//     boy('חבובו')
 //     , boy('יותם')
-//     , boy('יואב')
-//     , boy('אופיר')
-//     , boy('גלעד')
-//     , boy('שי')
-//     , boy('אלי')
-//     , girl('יעל')
-//     , girl('עינב')
+//     , boy('אורי')
+//     , boy('יובל')
+//     , boy('אלעד')
+//     , boy('רוני')
+//     , boy('גיא')
+//     , girl('חבובה')
+//     , girl('נועה')
+//     , girl('דיאנה')
+
+//     , girl('שחר')
+//     , girl('שקד')
+//     , girl('נוגה בלי ו')
 //     , girl('מעיין')
-//     , girl('ענת')
-//     , girl('טליה')
-//     , girl('איילת')
-//     , girl('פסיה')
+//     , girl('לוטם')
+//     , girl('עדי')
+//     , girl('דניאלה')
 // ])
+
+const kids = shuffle([
+    boy('יִפְתַּח')
+    , boy('יוֹתָם')
+    , boy('יוֹאָב')
+    , boy('אוֹפִיר')
+    , boy('גִּלְעָד')
+    , boy('שַׁי')
+    , boy('אֵלִי')
+    , girl('יָעֵל')
+    , girl('עֵנָב')
+    , girl('מַעְיָן')
+    , girl('עֲנָת')
+    , girl('טַלְיָה')
+    , girl('אַיֶּלֶת')
+    , girl('פֶּסְיָה')
+])
 
 function kid(): kid {
     const kid = kids.shift() as kid
@@ -144,8 +138,8 @@ interface Node {
 }
 
 function took(gender: gender) {
-    const boy = ['לקח', 'חטף', 'גנב']
-    const girl = ['לקחה', 'גזלה', 'גנבה']
+    const boy = ['לָקַח', 'חָטַף', 'גָּנַב']
+    const girl = ['לָקְחָה', 'גָּזְלָה', 'גָּנְבָה']
     return gender == 'boy'
         ? randomItem(boy)
         : randomItem(girl)
@@ -163,7 +157,7 @@ export class NodePlusNode implements Node {
 
     strs(animal: Animal): string[] {
         return this.l.strs(animal).concat(this.r.strs(animal)).concat([
-            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} את כל ה${animal.names} של ${this.l.kid.name} ו${this.r.kid.name}.`
+            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַ${animal.names} שֶׁל ${this.l.kid.name} וְ${this.r.kid.name}.`
         ])
     }
 }
@@ -180,8 +174,8 @@ export class NodeMinusNode implements Node {
 
     strs(animal: Animal): string[] {
         return this.l.strs(animal).concat(this.r.strs(animal.eatBy())).concat([
-            `כל אחד מה${animal.eatBy().names} של ${this.r.kid.name} אכל ${animal.name} אחד של ${this.l.kid.name}.`,
-            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} את כל ה${animal.names} הנותרים של ${this.l.kid.name}.`
+            `כָּל אֶחָד מֵהַ${animal.eatBy().names} שֶׁל ${this.r.kid.name} אכל ${animal.name} אֶחָד שֶׁל ${this.l.kid.name}.`,
+            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַ${animal.names} הַנּוֹתָרִים שֶׁל ${this.l.kid.name}.`
         ])
     }
 }
@@ -198,8 +192,8 @@ export class NodeMulNode implements Node {
 
     strs(animal: Animal): string[] {
         return this.l.strs(animal).concat(this.r.strs(animal)).concat([
-            `לכל ${animal.name} של ${this.l.kid.name} נולד גור אחד מכל אחד מה${animal.names} של ${this.r.kid.name}.`,
-            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} את כל הגורים שנולדו.`
+            `לְכֹל ${animal.name} שֶׁל ${this.l.kid.name} נוֹלַד גּוּר אֶחָד מִכֹּל אֶחָד מֵהַ${animal.names} שֶׁל ${this.r.kid.name}.`,
+            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַגּוּרִים שֶׁנּוֹלְדוּ.`
         ])
     }
 }
@@ -216,16 +210,16 @@ export class NodeDivNode implements Node {
 
     strs(animal: Animal): string[] {
         return this.l.strs(animal).concat(this.r.strs(animal)).concat([
-            `${this.r.kid.name} ${word(vocab.buy, this.r.kid.gender)} כלוב אחד לכל אחד מה${animal.names} ${word(vocab.own, this.r.kid.gender)}.`,
-            `${this.l.kid.name} ${word(vocab.put, this.l.kid.gender)} את ה${animal.names} ${word(vocab.own, this.l.kid.gender)} בכלובים של ${this.r.kid.name}, מספר זהה של ${animal.names} בכל כלוב.`,
-            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} את כל ה${animal.names} מאחד הכלובים.`
+            `${this.r.kid.name} ${word(vocab.buy, this.r.kid.gender)} כְּלוּב אֶחָד לְכֹל אֶחָד מֵהַ${animal.names} ${word(vocab.own, this.r.kid.gender)}.`,
+            `${this.l.kid.name} ${word(vocab.put, this.l.kid.gender)} אֶת הַ${animal.names} ${word(vocab.own, this.l.kid.gender)} בַּכְּלוּבִים שֶׁל ${this.r.kid.name}, מִסְפָּר זֵהֶה שֶׁל ${animal.names} בְּכָל כְּלוּב.`,
+            `${this.kid.name}, ${this.kid.title}, ${took(this.kid.gender)} אֶת כָּל הַ${animal.names} מֵאֶחָד הַכְּלוּבִים.`
         ])
     }
 }
 
 function count(n: number, animal: Animal) {
     return n == 1
-        ? `${animal.name} אחד`
+        ? `${animal.name} אֶחָד`
         : `${n} ${animal.names}`
 }
 
@@ -239,6 +233,6 @@ export class NodeNumber implements Node {
 
     strs(animal: Animal): string[] {
         return [
-            `ל${this.kid.name}, ${this.kid.title}, יש ${count(this.n, animal)}.`]
+            `לְ${this.kid.name}, ${this.kid.title}, יֵשׁ ${count(this.n, animal)}.`]
     }
 }
